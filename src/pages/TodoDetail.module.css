@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  margin-top: 150px;
+  width: 450px;
+  border: 2px solid #7853f6;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: initial;
+}
+
+.id {
+  font-size: 13px;
+}
+
+.button {
+  background-color: #7853f6;
+  border: none;
+  width: 80px;
+  border-radius: 5px;
+  font-weight: 700;
+  color: whitesmoke;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.line {
+  height: 0.5px;
+  background-color: rgb(181, 181, 181);
+}
+
+.title {
+  font-weight: 800;
+  font-size: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.content {
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 20px;
+}

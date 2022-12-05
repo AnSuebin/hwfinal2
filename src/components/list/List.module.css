@@ -1,0 +1,14 @@
+.container {
+  padding: 20px;
+}
+
+.workingsContainer {
+  display: grid;
+  /* autofill공부 
+  - auto-fill과 auto-fit은 
+  column의 개수를 미리 정하지 않고 설정된 너비가 허용하는 한 최대한 셀을 채웁니다.
+  - 
+  */
+  grid-template-columns: repeat(auto-fit, min(240px));
+  gap: 20px;
+}
