@@ -1,15 +1,21 @@
+// 인풋창이 있는 Form 페이지
+// 인풋은 useState로 관리해줬음 (전역이 아니기 떄문)
 import { useState } from "react";
 import styled from "./Form.module.css";
+// 리덕스 관련
 import { useDispatch } from "react-redux";
 import { addWork } from "../../redux/modules/workList";
 
 const Form = () => {
+  // useState로 Input 관리
   const [formValue, setFormValue] = useState({ title: "", content: "" });
+  // action으로 넘기기 위해 dispatch 사용
   const dispatch = useDispatch();
 
   const inputChangeHandler = (event) => {
     event.preventDefault();
     let { value, id } = event.target;
+    // 값을 받아 넣어줌
     setFormValue({ ...formValue, [id]: value });
   };
 
@@ -41,6 +47,7 @@ const Form = () => {
       </form>
       <button
         className={styled.addButton}
+        // dispatch로 addWork type값과 props로 payload 넘겨줌
         onClick={() => {
           dispatch(addWork(formValue));
           setFormValue({ title: "", content: "" });
