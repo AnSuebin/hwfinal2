@@ -1,9 +1,8 @@
 // id로 변경 필요
-import uuid from "react-uuid";
-
-const ADD_WORK = "ADD_WORK";
-const DELETE_WORK = "DELETE_WORK";
-const TO_ANOTHER_LIST = "TO_ANOTHER_LIST";
+// import uuid from "react-uuid";
+const ADD_WORK = "worklist/ADD_WORK";
+const DELETE_WORK = "worklist/DELETE_WORK";
+const TO_ANOTHER_LIST = "worklist/TO_ANOTHER_LIST";
 
 // Action Creator
 export const addWork = (payload) => {
@@ -38,15 +37,7 @@ const workList = (state = initialState, action) => {
     case ADD_WORK:
       return {
         // 추가하는 값을 뒤에 넣어 덮어 씌워주기
-        working: [
-          ...state.working,
-          {
-            id: uuid(),
-            title: action.payload.title,
-            content: action.payload.content,
-            done: false,
-          },
-        ],
+        working: [...state.working, action.payload],
       };
     case DELETE_WORK:
       // 삭제하는 것을 빼내주기

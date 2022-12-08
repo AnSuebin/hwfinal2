@@ -9,6 +9,8 @@ const List = () => {
     return state.workList.working;
   });
 
+  console.log(working);
+
   return (
     <>
       <div className={styled.container}>

@@ -5,6 +5,8 @@ import styled from "./Form.module.css";
 // 리덕스 관련
 import { useDispatch } from "react-redux";
 import { addWork } from "../../redux/modules/workList";
+// id로 변경 필요
+import uuid from "react-uuid";
 
 const Form = () => {
   // useState로 Input 관리
@@ -13,7 +15,7 @@ const Form = () => {
   const dispatch = useDispatch();
 
   const inputChangeHandler = (event) => {
-    event.preventDefault();
+     
     let { value, id } = event.target;
     // 값을 받아 넣어줌
     setFormValue({ ...formValue, [id]: value });
@@ -49,7 +51,14 @@ const Form = () => {
         className={styled.addButton}
         // dispatch로 addWork type값과 props로 payload 넘겨줌
         onClick={() => {
-          dispatch(addWork(formValue));
+          dispatch(
+            addWork({
+              id: uuid(),
+              title: formValue.title,
+              content: formValue.content,
+              done: false,
+            })
+          );
           setFormValue({ title: "", content: "" });
         }}
       >
